@@ -6,7 +6,7 @@
 	$email = $_POST['email'];
 	$telefono = $_POST['telefono'];
 	$estado_civil = $_POST['estado_civil'];
-	$hijos = isset($_POST['hijo']) ? $_POST['hijos'] : 0;
+	$hijos = isset($_POST['hijos']) ? $_POST['hijos'] : 0;
 	$intereses = isset($_POST['intereses']) ? $_POST['intereses'] : null;
 	
 	$arrayIntereses = null;
