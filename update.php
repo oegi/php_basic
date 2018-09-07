@@ -1,14 +1,15 @@
 <?php
-	#Se hace el require a la conexion
-		require 'conexion.php';
-	#recepcion de variables por _POST
+	
+	require 'conexion.php';
+	
+	$id = $_POST['id'];
 	$nombre = $_POST['nombre'];
 	$email = $_POST['email'];
 	$telefono = $_POST['telefono'];
 	$estado_civil = $_POST['estado_civil'];
-	$hijos = isset($_POST['hijos']) ? $_POST['hijos'] : 0;# 0 es si no se selecciono ningun valor
-	$intereses = isset($_POST['intereses']) ? $_POST['intereses'] : null; #no es 0 porque es valor no es int
-	#declaracion de array de intereses
+	$hijos = isset($_POST['hijos']) ? $_POST['hijos'] : 0;
+	$intereses = isset($_POST['intereses']) ? $_POST['intereses'] : null;
+	
 	$arrayIntereses = null;
 	
 	$num_array = count($intereses);
@@ -16,20 +17,19 @@
 	
 	if($num_array>0){
 		foreach ($intereses as $key => $value) {
-			if ($contador != $num_array-1){
+			if ($contador != $num_array-1)
 			$arrayIntereses .= $value.' ';
-			$contador++;
-			} else {
+			else
 			$arrayIntereses .= $value;
-			}
+			$contador++;
 		}
 	}
 	
-	$sql = "INSERT INTO personas (nombre, correo, telefono, estado_civil, hijos, intereses) VALUES ('$nombre', '$email', '$telefono', '$estado_civil', '$hijos', '$arrayIntereses')";
+	$sql = "UPDATE personas SET nombre='$nombre', correo='$email', telefono='$telefono', estado_civil='$estado_civil', hijos='$hijos', intereses='$arrayIntereses' WHERE id = '$id'";
 	$resultado = $mysqli->query($sql);
 	
 ?>
-
+ 
 <html lang="es">
 	<head>
 		
@@ -45,9 +45,9 @@
 			<div class="row">
 				<div class="row" style="text-align:center">
 					<?php if($resultado) { ?>
-						<h3>REGISTRO GUARDADO</h3>
+						<h3>REGISTRO MODIFICADO</h3>
 						<?php } else { ?>
-						<h3>ERROR AL GUARDAR</h3>
+						<h3>ERROR AL MODIFICAR</h3>
 					<?php } ?>
 					
 					<a href="index.php" class="btn btn-primary">Regresar</a>

@@ -48,7 +48,7 @@
 				</div>
 				
 				<div class="form-group">
-					<label for="hijos" class="col-sm-2 control-label">¿Tiene Hijos?</label>
+					<label for="hijos" class="col-sm-2 control-label">?Tiene Hijos?</label>
 					
 					<div class="col-sm-10">
 						<label class="radio-inline">
