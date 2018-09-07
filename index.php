@@ -54,7 +54,7 @@
 							<th>Telefono</th>
 							<th></th>
 							<th></th>
-						</tr>
+				          </tr>
 					</thead>
 					
 					<tbody>
