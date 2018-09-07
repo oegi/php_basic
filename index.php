@@ -64,8 +64,8 @@
 								<td><?php echo $row['nombre']; ?></td>
 								<td><?php echo $row['correo']; ?></td>
 								<td><?php echo $row['telefono']; ?></td>
-								<td><a href="modificar.php?id=<?php echo $row['id']; ?>"><span class="fa fa-pencil"></span></a></td>
-								<td><a href="#" data-href="eliminar.php?id=<?php echo $row['id']; ?>" data-toggle="modal" data-target="#confirm-delete"><span class="fa fa-remove"></span></a></td>
+								<td><a href="modificar.php?id=<?php echo $row['id']; ?>"><i class="fa fa-pencil" aria-hidden="true"></i></span></a></td>
+								<td><a href="#" data-href="eliminar.php?id=<?php echo $row['id']; ?>" data-toggle="modal" data-target="#confirm-delete"><i class="fa fa-remove" aria-hidden="true"></i></a></td>
 							</tr>
 						<?php } ?>
 					</tbody>
